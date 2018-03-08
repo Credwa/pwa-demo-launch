@@ -20,10 +20,8 @@ app.get('/', function(req, res) {
       .replace(/_/g, '.');
     $.iPhone = /iPhone/.test(ua);
     $.iPad = /iPad/.test(ua);
-    app.use(express.static(__dirname + '/dist/pwa-ios/'));
     res.sendFile(path.join(__dirname + '/dist/pwa-ios/index.html'));
   } else {
-    app.use(express.static(__dirname + '/dist/pwa-mat/'));
     res.sendFile(path.join(__dirname + '/dist/pwa-mat/index.html'));
   }
 });
