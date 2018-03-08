@@ -8,10 +8,6 @@ let app = express();
 
 app.use(device.capture());
 
-app.get('/test', function(req, res) => {
-
-})
-
 app.get('/', function(req, res) {
   var ua = req.headers['user-agent'],
     $ = {};
