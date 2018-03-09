@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/', function(req, res) {
+  // check if request is made from ios or none ios device when serve proper folder
   var ua = req.headers['user-agent'],
     $ = {};
 
