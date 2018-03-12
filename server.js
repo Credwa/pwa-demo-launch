@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const device = require('express-device');
 const port = process.env.PORT || 3000;
 let app = express();
 
@@ -36,11 +37,11 @@ app.get('/', function(req, res) {
     $.iPhone = /iPhone/.test(ua);
     $.iPad = /iPad/.test(ua);
     app.use(express.static(__dirname + '/dist/pwa-ios/'));
-    app.use(express.static(__dirname + './'));
+    app.use(express.static(__dirname + '/'));
     res.sendFile(path.join(__dirname + '/dist/pwa-ios/index.html'));
   } else {
     app.use(express.static(__dirname + '/dist/pwa-mat/'));
-    app.use(express.static(__dirname + './'));
+    app.use(express.static(__dirname + '/'));
     res.sendFile(path.join(__dirname + '/dist/pwa-mat/index.html'));
   }
 });
