@@ -1,8 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const device = require('express-device');
-const axios = require('axios');
 const port = process.env.PORT || 3000;
 let app = express();
 
